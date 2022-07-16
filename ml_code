@@ -1,14 +1,30 @@
 # Task 1 Prediction using Supervised Machine Learning
 
+# Importing all libraries required in this notebook
+import pandas as pd
+import numpy as np  
+import matplotlib.pyplot as plt  
+%matplotlib inline
+
+url = "http://bit.ly/w-data"
+s_data = pd.read_csv(url)
+
+# Plotting the distribution of scores
+s_data.plot(x='Hours', y='Scores', style='o')  
+plt.title('Hours vs Percentage')  
+plt.xlabel('Hours Studied')  
+plt.ylabel('Percentage Score')  
+plt.show()
+
 # Preparing the data
 """
 
 X=data.iloc[:,:-1].values
 y=data.iloc[:,1].values
 
-X
+print(X)
 
-y
+print(y)
 
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=0)
